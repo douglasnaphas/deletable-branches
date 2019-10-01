@@ -4,7 +4,7 @@
   "description": "List remote tracking branches in a Git repo that were in PRs that were squashed and merged into master.",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest --passWithNoTests"
   },
   "repository": {
     "type": "git",
@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/douglasnaphas/deletable-branches/issues"
   },
-  "homepage": "https://github.com/douglasnaphas/deletable-branches#readme"
+  "homepage": "https://github.com/douglasnaphas/deletable-branches#readme",
+  "devDependencies": {
+    "jest": "^24.9.0"
+  }
 }
