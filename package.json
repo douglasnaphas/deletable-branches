@@ -1,0 +1,22 @@
+{
+  "name": "deletable-branches",
+  "version": "1.0.0",
+  "description": "List remote tracking branches in a Git repo that were in PRs that were squashed and merged into master.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/douglasnaphas/deletable-branches.git"
+  },
+  "keywords": [
+    "Git"
+  ],
+  "author": "Douglas Naphas <douglasnaphas@gmail.com>",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/douglasnaphas/deletable-branches/issues"
+  },
+  "homepage": "https://github.com/douglasnaphas/deletable-branches#readme"
+}
