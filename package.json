@@ -1,6 +1,6 @@
 {
   "name": "deletable-branches",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "List remote tracking branches in a Git repo that were in PRs that were squashed and merged into master.",
   "main": "lib/index.js",
   "files": [
