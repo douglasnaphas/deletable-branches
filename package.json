@@ -25,5 +25,9 @@
   "homepage": "https://github.com/douglasnaphas/deletable-branches#readme",
   "devDependencies": {
     "jest": "^24.9.0"
+  },
+  "dependencies": {
+    "axios": "^0.19.0",
+    "commander": "^3.0.2"
   }
 }
