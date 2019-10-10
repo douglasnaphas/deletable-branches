@@ -67,6 +67,15 @@ f1737a94a41f2856a105f3dd70627975025f47e4 master
 
 Without `--merged`, `--not-open`, `--squashed-diffs`, or `--closed`, `deletable-branches` prints all the remote tracking branches.
 
+## Deleting branches
+You could use the output to delete branches with, for example,
+```
+npx deletable-branches -t /file/w/GitHubPersonalAccessToken \
+  --merged --not-open --squashed-diff \
+  | while read b ; do \
+  git push --force origin :${b} ; done
+```
+
 ## GitHub Personal Access Token
 
 You need a [GitHub Personal Access Token](https://developer.github.com/v4/guides/forming-calls/#authenticating-with-graphql) to use this script.
