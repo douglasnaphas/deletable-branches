@@ -19,10 +19,12 @@ You could run
 ```
 npx deletable-branches --token-file /file/w/GitHubPersonalAccessToken --merged --no-open --squashed-diffs
 ```
+
 to list remote tracking branches that:
-  1. Are included in pull requests on GitHub that were merged into master (`--merged`),
-  1. Are not included in any open pull requests on GitHub (`--no-open`), and
-  1. Introduced changes that can be found in the history of `master` (`--squashed-diff`).
+
+1. Are included in pull requests on GitHub that were merged into master (`--merged`),
+1. Are not included in any open pull requests on GitHub (`--no-open`), and
+1. Introduced changes that can be found in the history of `master` (`--squashed-diff`).
 
 `--squashed-diff` is based on the shell commands used by [git-delete-squashed](https://www.npmjs.com/package/git-delete-squashed).
 
@@ -68,7 +70,9 @@ f1737a94a41f2856a105f3dd70627975025f47e4 master
 Without `--merged`, `--not-open`, `--squashed-diffs`, or `--closed`, `deletable-branches` prints all the remote tracking branches.
 
 ## Deleting branches
+
 You could use the output to delete branches with, for example,
+
 ```
 npx deletable-branches -t /file/w/GitHubPersonalAccessToken \
   --merged --not-open --squashed-diff \
@@ -80,6 +84,12 @@ npx deletable-branches -t /file/w/GitHubPersonalAccessToken \
 
 You need a [GitHub Personal Access Token](https://developer.github.com/v4/guides/forming-calls/#authenticating-with-graphql) to use this script.
 
-## Caveat
+## Caveats
 
-This probably will not work well when remotes have slashes ("/") in their names.
+### Slashes
+
+This probably will not work well when remotes have slashes (`/`) in their names. It does handle slashes in remote branch names. So a remote of `my/origin` as opposed to `origin` will probably not be picked up, but a branch name of `branch/name` as opposed to `branch-name` should be.
+
+### Only for GitHub organizations
+
+The calls to the GitHub API only work when the repo you're in is within a GitHub organization/team.
