@@ -17,16 +17,16 @@ The repo [delebran/trepo-1](https://github.com/delebran/trepo-1) has had pull re
 You could run
 
 ```
-npx deletable-branches --token-file /file/w/GitHubPersonalAccessToken --merged --no-open --squashed-diffs
+npx deletable-branches --token-file /file/w/GitHubPersonalAccessToken --merged --not-open --squashed-diffs
 ```
 
 to list remote tracking branches that:
 
 1. Are included in pull requests on GitHub that were merged into master (`--merged`),
-1. Are not included in any open pull requests on GitHub (`--no-open`), and
+1. Are not included in any open pull requests on GitHub (`--not-open`), and
 1. Introduced changes that can be found in the history of `master` (`--squashed-diff`).
 
-`--squashed-diff` is based on the shell commands used by [git-delete-squashed](https://www.npmjs.com/package/git-delete-squashed).
+`--squashed-diff` is based on the local Git commands used by [git-delete-squashed](https://www.npmjs.com/package/git-delete-squashed). `--merged`, `--not-open`, and `--closed` use the GitHub GraphQL API.
 
 ```
 $ npx deletable-branches -t /file/w/GitHubPersonalAccessToken --merged --not-open --squashed-diff
@@ -92,4 +92,4 @@ This probably will not work well when remotes have slashes (`/`) in their names.
 
 ### Only for GitHub organizations
 
-The calls to the GitHub API only work when the repo you're in is within a GitHub organization/team.
+The calls to the GitHub API made by `--merged`, `--not-open`, and `--closed` only work when the repo you're in is within a GitHub organization/team. If you use the option `--squashed-diffs`, and not `--merged`, `--not-open`, or `--closed`, it should work on any repo.
