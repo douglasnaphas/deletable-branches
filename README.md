@@ -76,6 +76,7 @@ You could use the output to delete branches with, for example,
 ```
 npx deletable-branches -t /file/w/GitHubPersonalAccessToken \
   --merged --not-open --squashed-diff \
+  | awk '{print $2}' \
   | while read b ; do \
   git push --force origin :${b} ; done
 ```
