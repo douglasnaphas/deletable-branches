@@ -79,3 +79,7 @@ npx deletable-branches -t /file/w/GitHubPersonalAccessToken \
 ## GitHub Personal Access Token
 
 You need a [GitHub Personal Access Token](https://developer.github.com/v4/guides/forming-calls/#authenticating-with-graphql) to use this script.
+
+## Caveat
+
+This probably will not work well when remotes have slashes ("/") in their names.
